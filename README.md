@@ -72,9 +72,10 @@ MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 FireBeetle-ESP32  |      √       |             |            | 
 FireBeetle-ESP8266|      √       |              |             | 
-ATMEGA2560  |      √       |             |            | 
+Mega2560  |      √       |             |            | 
 Arduino uno |       √      |             |            | 
 Leonardo  |      √       |              |             | 
+
 
 
 
