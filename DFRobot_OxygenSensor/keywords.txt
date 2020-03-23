@@ -1,0 +1,34 @@
+#######################################
+# Syntax Coloring DFRobot_OxygenSensor
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot_OxygenSensor	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+ReadOxygenData	KEYWORD2
+Calibrate	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+ADDRESS_0	LITERAL1
+ADDRESS_1	LITERAL1
+ADDRESS_2	LITERAL1
+ADDRESS_3	LITERAL1
+COLLECT_NUMBER	LITERAL1
+OXYGEN_CONECTRATION	LITERAL1
+OXYGEN_MV	LITERAL1
+Oxygen_IICAddress	LITERAL1
+
+
+
+
