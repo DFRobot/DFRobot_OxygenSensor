@@ -33,7 +33,7 @@ public:
   * @brief initialization parameters for i2c.
   *
   * @param addr0 is I2c device number .
-  *     iic slave Address, The default is O ADDRESS 0.
+  *     iic slave Address, The default is O ADDRESS 3.
   *     ADDRESS_0               0x70           // iic slave Address
   *     ADDRESS_1               0x71
   *     ADDRESS_2               0x72
