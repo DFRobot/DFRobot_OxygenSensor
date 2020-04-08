@@ -3,7 +3,7 @@ DFRobot's OxygenSensor
 
 ## DFRobot_OxygenSensor Library for Arduino
 ---------------------------------------------------------
-Arduino library is provided for reading oxygen concentrations through I2C and gas sensors.< br >
+Arduino library is provided for reading oxygen concentrations through I2C and gas sensors.
 Used to read the ozone and oxygen concentrations of the current module
 
 
