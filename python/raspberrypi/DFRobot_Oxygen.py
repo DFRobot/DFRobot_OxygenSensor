@@ -10,10 +10,10 @@
   @get from https://www.dfrobot.com
   @url https://github.com/DFRobot/DFRobot_Oxygen
 """
-import serial
 import time
 import smbus
-                
+import os
+           
 ADDRESS_0                 = 0x70           # iic slave Address
 ADDRESS_1                 = 0x71
 ADDRESS_2                 = 0x72
@@ -108,5 +108,9 @@ class DFRobot_Oxygen_IIC(DFRobot_Oxygen):
     @param value read data
   '''
   def read_reg(self, reg ,len):
-    rslt = self.i2cbus.read_i2c_block_data(self.__addr ,reg ,len)
-    return rslt
+    while 1:
+      try:
+        rslt = self.i2cbus.read_i2c_block_data(self.__addr ,reg ,len)
+        return rslt
+      except:
+        os.system('i2cdetect -y 1')
