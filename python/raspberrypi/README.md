@@ -25,10 +25,11 @@ Oxygen module.
 
 ## Feature
 
-1. The module has two modes for calibration, one is button calibration, the other is code calibration.< br >
-2. Long press the button for calibration. Press the button to determine whether it has been calibrated.< br >
-3. Code calibration 10 minutes after the sensor is electrified, the running code will be calibrated successfully.< br >
-4.You can measure the concentration of oxygen in the air.< br >
+1. The module has two modes for calibration, one is button calibration, the other is code calibration. <br>
+2. Long press the button for calibration. Press the button to determine whether it has been calibrated. <br>
+3. Code calibration 10 minutes after the sensor is electrified, the running code will be calibrated successfully. <br>
+4. You can measure the concentration of oxygen in the air. <br>
+
 ## Installation
 
 This Sensor should work with DFRobot_Oxygen on RaspberryPi. <br>
