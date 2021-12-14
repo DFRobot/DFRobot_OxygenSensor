@@ -36,10 +36,10 @@
 #ifndef __DFRobot_OxygenSensor_H__
 #define __DFRobot_OxygenSensor_H__
 
-#define           ADDRESS_0                 0x70           // iic slave Address
-#define           ADDRESS_1                 0x71
-#define           ADDRESS_2                 0x72
-#define           ADDRESS_3                 0x73
+#define           OXYGEN_ADDRESS_0          0x70           // iic slave Address
+#define           OXYGEN_ADDRESS_1          0x71
+#define           OXYGEN_ADDRESS_2          0x72
+#define           OXYGEN_ADDRESS_3          0x73
 
 #define           OCOUNT                    100            // Oxygen Count Value
 /* Oxygen register address */
@@ -52,7 +52,7 @@ class DFRobot_OxygenSensor{
 public:
   DFRobot_OxygenSensor();
   ~DFRobot_OxygenSensor();
-  bool     begin(uint8_t addr = ADDRESS_0);
+  bool     begin(uint8_t addr = OXYGEN_ADDRESS_0);
   void     Calibrate(float vol, float mv = 0);
   float    ReadOxygenData(uint8_t CollectNum);
   

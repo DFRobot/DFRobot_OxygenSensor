@@ -14,10 +14,10 @@ import time
 import smbus
 import os
            
-ADDRESS_0                 = 0x70           # iic slave Address
-ADDRESS_1                 = 0x71
-ADDRESS_2                 = 0x72
-ADDRESS_3                 = 0x73
+OXYGEN_ADDRESS_0                 = 0x70           # iic slave Address
+OXYGEN_ADDRESS_1                 = 0x71
+OXYGEN_ADDRESS_2                 = 0x72
+OXYGEN_ADDRESS_3                 = 0x73
 
 OXYGEN_DATA_REGISTER      = 0x03           # Oxygen data register
 USER_SET_REGISTER         = 0x08           # user set key value

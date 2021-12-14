@@ -34,10 +34,10 @@ public:
   *
   * @param addr is I2c device number.
   *     iic slave Address, The default is ADDRESS 3.
-  *     ADDRESS_0               0x70           // iic slave Address
-  *     ADDRESS_1               0x71
-  *     ADDRESS_2               0x72
-  *     ADDRESS_3               0x73
+  *     OXYGEN_ADDRESS_0               0x70           // iic slave Address
+  *     OXYGEN_ADDRESS_1               0x71
+  *     OXYGEN_ADDRESS_2               0x72
+  *     OXYGEN_ADDRESS_3               0x73
   *
   * @return true and false.
   */
