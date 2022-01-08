@@ -1,25 +1,25 @@
 # DFRobot_OxygenSensor
-- [中文版](./README.md)
+- [English Version](./README.md)
 
 DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款传感器利用电化学原理对空气中的氧气浓度进行监测，具有高精度、高灵敏度、线性范围宽、抗干扰能力强以及优异的重复性和稳定性的特点。使用I2C接口，就可读取传感器所在环境中的氧气浓度，可以兼容各类单片机和传感器，使用非常简单。 该氧气传感器可广泛应用于工业、矿井、仓储等空气不易流通的空间，以及环保领域中的氧气浓度检测。
 
 ![svg](../../resources/images/sen0322.jpg)
 
 
-## Product Link（https://www.dfrobot.com/product-2052.html）
+## 产品链接（https://www.dfrobot.com.cn/goods-2792.html）
 
     SKU：SEN0322
 
-## Table of Contents
+## 目录
 
-* [Summary](#Summary)
-* [Installation](#Installation)
-* [Methods](#Methods)
-* [Compatibility](#Compatibility)
-* [History](#History)
-* [Credits](#Credits)
+* [概述](#概述)
+* [库安装](#库安装)
+* [方法](#方法)
+* [兼容性](#兼容性y)
+* [历史](#历史)
+* [创作者](#创作者)
 
-## Summary
+## 概述
 
 有效量程为0~25%Vol
 
@@ -27,10 +27,10 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 
 具有快速校准功能，I2C数字输出，反接保护等
 
-## Installation
+## 库安装
 使用此库前，请首先下载库文件，将其粘贴到树莓派的自定义目录中，然后打开examples文件夹并在该文件夹中运行演示。
 
-## Methods
+## 方法
 
 ```python
   def calibrate(self, vol, mv):
@@ -49,17 +49,17 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
       @re
 ```
 
-## Compatibility
+## 兼容性
 
 * RaspberryPi Version
 
-| Board        | Work Well | Work Wrong | Untested | Remarks |
-| ------------ | :-------: | :--------: | :------: | ------- |
+| Board        | 正常运行  | 运行失败   | 未测试    | 备注
+| ------------ | :-------: | :--------: | :------: | :-----: |
 | RaspberryPi2 |           |            |    √     |         |
-| RaspberryPi3 |     √     |            |          |         |
-| RaspberryPi4 |           |            |    √     |         |
+| RaspberryPi3 |           |            |    √     |         |
+| RaspberryPi4 |     √     |            |          |         |
 
-* Python 版本
+* Python版本
 
 | Python  | Work Well | Work Wrong | Untested | Remarks |
 | ------- | :-------: | :--------: | :------: | ------- |
@@ -67,13 +67,12 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 | Python3 |           |            |    √     |         |
 
 
-## History
+## 历史
 
 - 2019/10/25 - V0.2.0 版本
 
 - 2021/10/22 - V1.0.0 版本
 
-
-## Credits
+## 创作者
 
 Written by ZhixinLiu(zhixin.liu@dfrobot.com), 2021. (Welcome to our [website](https://www.dfrobot.com/))
