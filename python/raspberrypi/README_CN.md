@@ -6,7 +6,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 ![svg](../../resources/images/sen0322.jpg)
 
 
-## 产品链接（https://www.dfrobot.com.cn/goods-2792.html）
+## 产品链接(https://www.dfrobot.com.cn/goods-2792.html)
 
     SKU：SEN0322
 
@@ -23,7 +23,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 
 有效量程为0~25%Vol
 
-兼容3.3V和5V主控器（注意：使用3.3V设备时，仍然可以5V供电）
+兼容3.3V和5V主控器(注意：使用3.3V设备时，仍然可以5V供电)
 
 具有快速校准功能，I2C数字输出，反接保护等
 
