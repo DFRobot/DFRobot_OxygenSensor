@@ -7,7 +7,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 ![svg](resources/images/sen0322.jpg)
 
 
-## 产品链接(https://www.dfrobot.com.cn/goods-2792.html)
+## 产品链接（https://www.dfrobot.com.cn/goods-2792.html）
 
     SKU：SEN0322
 
@@ -24,13 +24,13 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 
 有效量程为0~25%Vol
 
-兼容3.3V和5V主控器(注意：使用3.3V设备时，仍然可以5V供电)
+兼容3.3V和5V主控器（注意：使用3.3V设备时，仍然可以5V供电）
 
 具有快速校准功能，I2C数字输出，反接保护等
 
 ## 库安装
 这里提供两种使用本库的方法：
-1.打开Arduino IDE,在状态栏中的Tools--->Manager Libraries 搜索"DFRobot_OxygenSensor"并安装本库.
+1.打开Arduino IDE,在状态栏中的Tools--->Manager Libraries 搜索"DFRobot_MGC3130"并安装本库.
 2.首先下载库文件,将其粘贴到\Arduino\libraries目录中,然后打开examples文件夹并在该文件夹中运行演示.
 
 ## 方法

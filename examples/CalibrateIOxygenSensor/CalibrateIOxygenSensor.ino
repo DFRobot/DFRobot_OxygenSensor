@@ -1,9 +1,9 @@
 /*!
  * @file calibrateOxygenSensor.ino
- * @brief 校准氧气传感器
+ * @brief Calibrate oxygen sensor
  * @n step: we must first determine the iic device address, will dial the code switch A0, A1 (ADDRESS_0 for [0 0]), (ADDRESS_1 for [1 0]), (ADDRESS_2 for [0 1]), (ADDRESS_3 for [1 1]).
  * @n Then calibrate the oxygen sensor
- * @n note: it takes time to stable oxygen concentration, about 10 minutes.
+ * @n note: It takes about 10 minutes to stablize oxygen concentration.
  * @n The experimental phenomenon is that a certain percentage of oxygen concentration is printed on the serial port.
  * @n Because the oxygen concentration in oxygen air is certain, the data will not be greater than 25% vol.
  * @copyright Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)

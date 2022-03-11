@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 '''!
   @file DFRobot_Oxygen.py
-  @brief 定义DFRobot_Oxygen 类的基础结构，基础方法的实现
+  @brief Define the basic struct of DFRobot_Oxygen class, the implementation of basic method
   @copyright Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license The MIT License (MIT)
   @author [ZhixinLiu](zhixin.liu@dfrobot.com)
@@ -13,24 +13,24 @@ import time
 import smbus
 import os
            
-## i2c 地址选择
+## I2C address select
 ADDRESS_0                 = 0x70
 ADDRESS_1                 = 0x71
 ADDRESS_2                 = 0x72
 ADDRESS_3                 = 0x73
-## 氧气数据的寄存器
+## Register for oxygen data
 OXYGEN_DATA_REGISTER      = 0x03
-## 手动配置key值的寄存器
+## Register for users to configure key value manually
 USER_SET_REGISTER         = 0x08
-## 自动配置key值的寄存器
+## Register for automatically configuring key value
 AUTUAL_SET_REGISTER       = 0x09
-## 获取key值的寄存器
+## Register for obtaining key value
 GET_KEY_REGISTER          = 0x0A
 
 class DFRobot_Oxygen(object):
   ## oxygen key value
   __key      = 0.0
-  ## 平滑数据的值
+  ## Data value to be smoothed
   __count    = 0
   __txbuf      = [0]
   __oxygendata = [0]*101
@@ -47,9 +47,9 @@ class DFRobot_Oxygen(object):
   
   def calibrate(self, vol, mv):
     '''!
-      @brief 校准传感器
-      @param vol 氧气的浓度 单位 vol
-      @param mv 校准的电压 单位 mv
+      @brief Calibrate sensor
+      @param vol Oxygen concentration unit vol
+      @param mv Calibrated voltage unit mv
       @return None
     '''
     self.__txbuf[0] = int(vol * 10)
@@ -61,10 +61,10 @@ class DFRobot_Oxygen(object):
 
   def get_oxygen_data(self, collect_num):
     '''!
-      @brief 获取氧气浓度
-      @param collectNum 平滑数据的个数
-      @n     例如传入20取20个数据进行平均，再返回浓度数据
-      @return 氧气的浓度，单位 vol
+      @brief Get oxygen concentration
+      @param collectNum The number of data to be smoothed
+      @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data
+      @return Oxygen concentration, unit vol
     '''
     self.get_flash()
     if collect_num > 0:

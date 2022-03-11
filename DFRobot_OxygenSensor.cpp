@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_OxygenSensor.cpp
- * @brief 定义DFRobot_OxygenSensor 类的基础结构，基础方法的实现
+ * @brief Define the basic struct of DFRobot_OxygenSensor class, the implementation of basic method
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license The MIT License (MIT)
  * @author ZhixinLiu(zhixin.liu@dfrobot.com)

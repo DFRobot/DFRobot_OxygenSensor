@@ -1,12 +1,12 @@
 # DFRobot_OxygenSensor
 - [中文版](./README_CN.md)
 
-DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款传感器利用电化学原理对空气中的氧气浓度进行监测，具有高精度、高灵敏度、线性范围宽、抗干扰能力强以及优异的重复性和稳定性的特点。使用I2C接口，就可读取传感器所在环境中的氧气浓度，可以兼容各类单片机和传感器，使用非常简单。 该氧气传感器可广泛应用于工业、矿井、仓储等空气不易流通的空间，以及环保领域中的氧气浓度检测。
+The Gravity: I2C Oxygen Sensor is based on electrochemical principles and it can measure the ambient O2 concentration accurately and conveniently. Its effective range is 0~25%Vol. The sensor boasts high precision, high sensitivity, wide linear range, high anti-interference ability, high stability, and good repeatability. When equipped with an I2C interface, the sensor can read the ambient O2 concentration easily, meanwhile, it can also work with various MCU and sensors. This Arduino-compatible oxygen sensor can be widely applied to fields like industries, mines, warehouses, and other spaces where the air is not easy to circulate as well as to measure the oxygen concentration in the environment.
 
 ![svg](../../resources/images/sen0322.jpg)
 
 
-## Product Link(https://www.dfrobot.com/product-2052.html)
+## Product Link（https://www.dfrobot.com/product-2052.html）
 
     SKU：SEN0322
 
@@ -21,31 +21,31 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 
 ## Summary
 
-有效量程为0~25%Vol
+* Effective range: 0-25%Vol
 
-兼容3.3V和5V主控器(注意：使用3.3V设备时，仍然可以5V供电)
+* Compatible with both 3.3V and 5V micro-controllers (Note: it can be powered by 5V when using devices of 3.3V)
 
-具有快速校准功能，I2C数字输出，反接保护等
+* Fast calibration function, I2C digital output, reverse connection protection, etc.
 
 ## Installation
-使用此库前，请首先下载库文件，将其粘贴到树莓派的自定义目录中，然后打开examples文件夹并在该文件夹中运行演示。
+Download the library file before use, paste it into the custom directory for Raspberry Pi, then open the examples folder and run the demo in the folder.
 
 ## Methods
 
 ```python
   def calibrate(self, vol, mv):
     '''!
-      @brief 校准传感器
-      @param vol 氧气的浓度 单位 vol
-      @param mv 校准的电压 单位 mv
+      @brief Calibrate sensor
+      @param vol Oxygen concentration unit vol
+      @param mv Calibrated voltage unit mv
       @return None
     '''
 
   def get_oxygen_data(self, collect_num):
     '''!
-      @brief 获取氧气浓度
-      @param collectNum 平滑数据的个数
-      @n     例如传入20取20个数据进行平均，再返回浓度数据
+      @brief Get oxygen concentration
+      @param collectNum The number of data to be smoothed
+      @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data.
       @re
 ```
 
@@ -59,7 +59,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 | RaspberryPi3 |     √     |            |          |         |
 | RaspberryPi4 |           |            |    √     |         |
 
-* Python 版本
+* Python Version
 
 | Python  | Work Well | Work Wrong | Untested | Remarks |
 | ------- | :-------: | :--------: | :------: | ------- |
@@ -69,9 +69,9 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 
 ## History
 
-- 2019/10/25 - V0.2.0 版本
+- 2019/10/25 - V0.2.0 version
 
-- 2021/10/22 - V1.0.0 版本
+- 2021/10/22 - V1.0.0 version
 
 
 ## Credits
