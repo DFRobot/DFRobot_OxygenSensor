@@ -10,19 +10,20 @@
  */
 #include "DFRobot_OxygenSensor.h"
 
-DFRobot_OxygenSensor::DFRobot_OxygenSensor()
+DFRobot_OxygenSensor::DFRobot_OxygenSensor(uint8_t addr, TwoWire *pWire)
 {
+    _pWire = pWire;
+    _addr = addr;
 }
 DFRobot_OxygenSensor::~DFRobot_OxygenSensor()
 {
 }
 
-bool DFRobot_OxygenSensor::begin(uint8_t addr)
+bool DFRobot_OxygenSensor::begin()
 {
-  this->_addr = addr;
-  Wire.begin();
-  Wire.beginTransmission(_addr);
-  if(Wire.endTransmission() == 0){
+    _pWire->begin();
+    _pWire->beginTransmission(_addr);
+  if(_pWire->endTransmission() == 0){
     return true;
   }
   return false;
@@ -31,13 +32,13 @@ bool DFRobot_OxygenSensor::begin(uint8_t addr)
 void DFRobot_OxygenSensor::readFlash()
 {
   uint8_t value = 0;
-  Wire.beginTransmission(_addr);
-  Wire.write(GET_KEY_REGISTER);
-  Wire.endTransmission();
+    _pWire->beginTransmission(_addr);
+    _pWire->write(GET_KEY_REGISTER);
+    _pWire->endTransmission();
   delay(50);
-  Wire.requestFrom(_addr, (uint8_t)1);
-    while (Wire.available()){
-      value = Wire.read();
+    _pWire->requestFrom(_addr, (uint8_t)1);
+    while (_pWire->available()){
+      value = _pWire->read();
     }
   if(value == 0){
     this->_Key = 20.9 / 120.0;
@@ -48,10 +49,10 @@ void DFRobot_OxygenSensor::readFlash()
 
 void DFRobot_OxygenSensor::i2cWrite(uint8_t reg, uint8_t data)
 {
-  Wire.beginTransmission(_addr);
-  Wire.write(reg);
-  Wire.write(data);
-  Wire.endTransmission();
+    _pWire->beginTransmission(_addr);
+    _pWire->write(reg);
+    _pWire->write(data);
+    _pWire->endTransmission();
 }
 
 void DFRobot_OxygenSensor::calibrate(float vol, float mv)
@@ -65,20 +66,20 @@ void DFRobot_OxygenSensor::calibrate(float vol, float mv)
   }
 }
 
-float DFRobot_OxygenSensor::getOxygenData(uint8_t collectNum) 
+float DFRobot_OxygenSensor::getOxygenData(uint8_t collectNum)
 {
   uint8_t rxbuf[10]={0}, k = 0;
   static uint8_t i = 0, j = 0;
   readFlash();
   if(collectNum > 0){
-    for(j = collectNum - 1;  j > 0; j--) {  oxygenData[j] = oxygenData[j-1]; } 
-    Wire.beginTransmission(_addr);
-    Wire.write(OXYGEN_DATA_REGISTER);
-    Wire.endTransmission();
+    for(j = collectNum - 1;  j > 0; j--) {  oxygenData[j] = oxygenData[j-1]; }
+      _pWire->beginTransmission(_addr);
+      _pWire->write(OXYGEN_DATA_REGISTER);
+      _pWire->endTransmission();
     delay(100);
-    Wire.requestFrom(_addr, (uint8_t)3);
-      while (Wire.available()){
-        rxbuf[k++] = Wire.read();
+      _pWire->requestFrom(_addr, (uint8_t)3);
+      while (_pWire->available()){
+        rxbuf[k++] = _pWire->read();
       }
     oxygenData[0] = ((_Key) * (((float)rxbuf[0]) + ((float)rxbuf[1] / 10.0) + ((float)rxbuf[2] / 100.0)));
     if(i < collectNum) i++;

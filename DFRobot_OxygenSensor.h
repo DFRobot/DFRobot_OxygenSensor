@@ -28,7 +28,7 @@
 class DFRobot_OxygenSensor
 {
 public:
-  DFRobot_OxygenSensor();
+  DFRobot_OxygenSensor(uint8_t _addr, TwoWire *pWire);
   ~DFRobot_OxygenSensor();
   /**
    * @fn begin
@@ -37,7 +37,7 @@ public:
    * @n     Default to use i2c address of 0x70 without passing parameters
    * @return None
    */
-  bool begin(uint8_t addr = ADDRESS_0);
+  bool begin();
 
   /**
    * @fn calibrate
@@ -54,16 +54,20 @@ public:
    * @param collectNum The number of data to be smoothed
    * @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data
    * @return Oxygen concentration, unit
-   */  
+   */
   float getOxygenData(uint8_t collectNum);
-  
+
 private:
   void readFlash();
   void i2cWrite(uint8_t reg, uint8_t data);
-  uint8_t  _addr;                               
+  uint8_t  _addr;
   float _Key = 0.0;                          ///< oxygen key value
   float oxygenData[OCOUNT] = {0.00};
   float getAverageNum(float bArray[], uint8_t len);
+
+protected:
+    TwoWire   *_pWire = NULL;
+
 };
 
 #endif
