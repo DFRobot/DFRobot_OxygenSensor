@@ -66,15 +66,19 @@ class DFRobot_Oxygen(object):
       @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data
       @return Oxygen concentration, unit vol
     '''
+    skipped = 0
     self.get_flash()
     if collect_num > 0:
       for num in range(collect_num, 1, -1):
         self.__oxygendata[num-1] = self.__oxygendata[num-2]
       rslt = self.read_reg(OXYGEN_DATA_REGISTER, 3)
-      self.__oxygendata[0] = self.__key * (float(rslt[0]) + float(rslt[1]) / 10.0 + float(rslt[2]) / 100.0)
+      if rslt[0] > 100:
+        self.__oxygendata[0] = self.__key * (float(rslt[0]) + float(rslt[1]) / 10.0 + float(rslt[2]) / 100.0)
+      else:
+        skipped += 1
       if self.__count < collect_num:
         self.__count += 1
-      return self.get_average_num(self.__oxygendata, self.__count)
+      return self.get_average_num(self.__oxygendata, self.__count-skipped)
     elif (collect_num > 100) or (collect_num <= 0):
       return -1
 
@@ -82,7 +86,10 @@ class DFRobot_Oxygen(object):
     temp = 0.0
     for num in range (0, Len):
       temp += barry[num]
-    return (temp / float(Len))
+    try:
+      return (temp / float(Len))
+    else:
+      return ('This one had to be skipped')
 
 class DFRobot_Oxygen_IIC(DFRobot_Oxygen): 
   def __init__(self, bus, addr):
