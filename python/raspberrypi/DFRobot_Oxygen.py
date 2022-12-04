@@ -88,7 +88,7 @@ class DFRobot_Oxygen(object):
       temp += barry[num]
     try:
       return (temp / float(Len))
-    else:
+    except:
       return ('This one had to be skipped')
 
 class DFRobot_Oxygen_IIC(DFRobot_Oxygen): 
