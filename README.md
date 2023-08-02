@@ -77,8 +77,8 @@ Micro:bit          |              |              |      √      |
 ## History
 
 - 2019/10/25 - V0.2.0 version
-
 - 2021/10/22 - V1.0.0 version
+- 2023/08/02 - V1.0.1 version
 
 ## Credits
 

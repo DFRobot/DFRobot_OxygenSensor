@@ -5,8 +5,8 @@
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license The MIT License (MIT)
  * @author ZhixinLiu(zhixin.liu@dfrobot.com)
- * @version V1.0
- * @date 2019-07-13
+ * @version V1.0.1
+ * @date 2023-08-02
  * @url https://github.com/DFRobot/DFRobot_OxygenSensor
  */
 #ifndef __DFRobot_OxygenSensor_H__
@@ -28,7 +28,7 @@
 class DFRobot_OxygenSensor
 {
 public:
-  DFRobot_OxygenSensor();
+  DFRobot_OxygenSensor(TwoWire *pWire = &Wire);
   ~DFRobot_OxygenSensor();
   /**
    * @fn begin
@@ -64,6 +64,6 @@ private:
   float _Key = 0.0;                          ///< oxygen key value
   float oxygenData[OCOUNT] = {0.00};
   float getAverageNum(float bArray[], uint8_t len);
+  TwoWire *_pWire;
 };
-
 #endif
