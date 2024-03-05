@@ -6,7 +6,7 @@ The Gravity: I2C Oxygen Sensor is based on electrochemical principles and it can
 ![svg](resources/images/sen0322.jpg)
 
 
-## Product Link（https://www.dfrobot.com/product-2052.html）
+## Product Link（ https://www.dfrobot.com/product-2052.html ）
 
     SKU：SEN0322
 
