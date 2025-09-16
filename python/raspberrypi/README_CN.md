@@ -46,7 +46,23 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
       @brief 获取氧气浓度
       @param collectNum 平滑数据的个数
       @n     例如传入20取20个数据进行平均，再返回浓度数据
-      @re
+      @return 氧气浓度 单位 vol
+    '''
+
+    def check_probel_life(self):
+    '''!
+      @brief 获取传感器探针寿命状态
+      @return 传感器探头寿命状态
+      @n     PROBEN_EXHAUSTED: 传感器探头寿命不足,建议更换传感器探头
+      @n     PROBEN_NORMAL: 传感器探头寿命正常
+      @n     VERSIO_NERROR: 调用此函数功能失败，传感器版本不兼容
+    '''
+
+      def get_current_data(self):
+    '''!
+      @brief 获取当前电流数据
+      @return 当前电流数据，单位：uA
+      '''
 ```
 
 ## 兼容性
@@ -72,6 +88,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 - 2019/10/25 - V0.2.0 版本
 
 - 2021/10/22 - V1.0.0 版本
+- 2025/09/15 - V1.0.2 版本
 
 ## 创作者
 

@@ -5,7 +5,7 @@
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license The MIT License (MIT)
  * @author ZhixinLiu(zhixin.liu@dfrobot.com)
- * @version V1.0.1
+ * @version V1.0
  * @date 2023-08-02
  * @url https://github.com/DFRobot/DFRobot_OxygenSensor
  */
@@ -24,6 +24,33 @@
 #define USER_SET_REGISTER    0x08   ///< register for users to configure key value manually
 #define AUTUAL_SET_REGISTER  0x09   ///< register that automatically configure key value
 #define GET_KEY_REGISTER     0x0A   ///< register for obtaining key value
+
+//      GET_KEY_REGISTER_L 0x0A
+//      GET_KEY_REGISTER_H 0x0B
+#define AUTUAL_SET_REGISTER_  0x0C ///< Register for automatic configuration of key values in v1.0.2
+//      AUTUAL_SET_REGISTER_L = 0xC
+//      AUTUAL_SET_REGISTER_H = 0xD
+#define PROBE_LIFE_REGISTER  0x0E   ///< register for probe life status
+#define VERSION_REGISTER 0x0F   ///< register for obtaining version information
+
+/**
+ * @enum eVersion_t
+ * @brief Sensor version type
+ */
+typedef enum{
+  eOldVersion = 0x00,
+  eNewVersion = 0x01
+}eVersion_t;
+
+/**
+ * @enum eProbeLife_t
+ * @brief Probe lifespan status type
+*/
+typedef enum{
+  eVersionError = -1,
+  eProbenExhausted = 0,
+  eProbenNormal = 1
+}eProbeLife_t;
 
 class DFRobot_OxygenSensor
 {
@@ -57,13 +84,32 @@ public:
    */  
   float getOxygenData(uint8_t collectNum);
   
+    /**
+   * @fn checkProbeLife
+   * @brief Get probe lifespan status
+   * @return eProbeLife_t
+   * @n     eProbenExhausted    The probe's lifespan has been exhausted.It is recommended to replace the sensor probe.
+   * @n     eProbenNormal       The probe's lifespan is normal
+   * @n     eVersionError       The sensor is not a new version, so it does not have the probe lifespan status register.
+  */
+  eProbeLife_t checkProbeLife(void);
+
+  /**
+   * getCurrentData
+   * @brief Get current data
+   * @return float current data
+   */
+  float getCurrentData(void);
+
 private:
   void readFlash();
   void i2cWrite(uint8_t reg, uint8_t data);
   uint8_t  _addr;                               
+  uint8_t _version;
   float _Key = 0.0;                          ///< oxygen key value
   float oxygenData[OCOUNT] = {0.00};
   float getAverageNum(float bArray[], uint8_t len);
+  uint8_t getVersion(void);
   TwoWire *_pWire;
 };
 #endif

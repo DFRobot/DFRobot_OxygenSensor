@@ -10,7 +10,7 @@
   @author [ZhixinLiu](zhixin.liu@dfrobot.com)
   version  V1.0
   date  2021-10-22
-  @url https://github.com/DFRobot/DFRobot_Oxygen
+  @url https://github.com/DFRobot/DFRobot_OxygenSensor
 '''
 import sys
 import time

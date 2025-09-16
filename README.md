@@ -61,6 +61,23 @@ There are two methods for using this library：
    * @return Oxygen concentration, unit vol
    */  
   float getOxygenData(uint8_t collectNum);
+
+  /**
+   * @fn checkProbeLife
+   * @brief Get probe lifespan status
+   * @return eProbeLife_t
+   * @n     eProbenExhausted    The probe's lifespan has been exhausted.It is recommended to replace the sensor probe.
+   * @n     eProbenNormal       The probe's lifespan is normal
+   * @n     eVersionError       The sensor is not a new version, so it does not have the probe lifespan status register.
+  */
+  eProbeLife_t checkProbeLife(void);
+
+  /**
+   * getCurrentData
+   * @brief Get current data
+   * @return Current current data, unit: uA
+   */
+  float getCurrentData(void);
 ```
 
 ## Compatibility
@@ -79,6 +96,7 @@ Micro:bit          |              |              |      √      |
 - 2019/10/25 - V0.2.0 version
 - 2021/10/22 - V1.0.0 version
 - 2023/08/02 - V1.0.1 version
+- 2025/09/15 - V1.0.2 version
 
 ## Credits
 

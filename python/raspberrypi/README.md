@@ -45,8 +45,24 @@ Download the library file before use, paste it into the custom directory for Ras
     '''!
       @brief Get oxygen concentration
       @param collectNum The number of data to be smoothed
-      @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data.
-      @re
+      @n     For example, upload 20 and take the average value of the 20 data, then return the concentration data
+      @return Oxygen concentration, unit vol
+    '''
+
+  def check_probel_life(self):
+    '''!
+    @brief Get probe lifespan status
+    @return The lifespan status of the sensor probe.
+    @n        PROBEN_EXHAUSTED: The probe's lifespan has been exhausted.It is recommended to replace the sensor probe.
+    @n        PROBEN_NORMAL: The probe's lifespan is normal
+    @n        VERSIO_NERROR: The function call failed. The sensor versions are incompatible
+    '''
+
+  def get_current_data(self):
+    '''!
+      @brief Get current data
+      @return Current current data, unit: uA
+    '''
 ```
 
 ## Compatibility
@@ -72,6 +88,7 @@ Download the library file before use, paste it into the custom directory for Ras
 - 2019/10/25 - V0.2.0 version
 
 - 2021/10/22 - V1.0.0 version
+- 2025/09/15 - V1.0.2 version
 
 
 ## Credits

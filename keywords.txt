@@ -15,6 +15,7 @@ DFRobot_OxygenSensor	KEYWORD1
 begin	KEYWORD2
 getOxygenData	KEYWORD2
 calibrate	KEYWORD2
+checkProbeLife  KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

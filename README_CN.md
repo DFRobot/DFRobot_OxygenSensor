@@ -62,6 +62,23 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
    * @return 氧气的浓度，单位 vol
    */  
   float getOxygenData(uint8_t collectNum);
+
+  /**
+   * @fn checkProbeLife
+   * @brief 获取传感器探针寿命状态
+   * @return eProbeLife_t
+   * @n         eProbenExhausted   传感器探头寿命不足,建议更换传感器探头
+   * @n            eProbenNormal   传感器探头寿命正常
+   * @n            eVersionError   调用此函数功能失败，传感器版本不兼容
+  */
+  eProbeLife_t checkProbeLife(void);
+
+  /**
+   * @fn getCurrentData
+   * @brief 获取当前电流数据
+   * @return 当前电流数据，单位 uA
+   */
+  float getCurrentData(void);
 ```
 
 ## 兼容性
@@ -80,6 +97,7 @@ DFRobot最新推出I2C氧气浓度传感器，有效量程为0~25%Vol。该款�
 - 2019/10/25 - V0.2.0 版本
 - 2021/10/22 - V1.0.0 版本
 - 2023/08/02 - V1.0.1 版本
+- 2025/09/15 - V1.0.2 版本
 
 ## 创作者
 
